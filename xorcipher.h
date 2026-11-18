@@ -1,9 +1,10 @@
 #include <stdlib.h>
 
-// typedef struct {
-//   int key;
-// } XorCipherKey;
+typedef struct {
+  char* key;
+  size_t n;
+} XorCipherKey;
 
-int xorcipher_genkey();
-int xorcipher_encrypt(char* x, size_t n, int key);
-int  xorcipher_decrypt(char* c, size_t n, int key);
+XorCipherKey xorcipher_genkey(size_t n);
+int xorcipher_encrypt(char* x, size_t n, XorCipherKey* key);
+int  xorcipher_decrypt(char* c, size_t n, XorCipherKey* key);
