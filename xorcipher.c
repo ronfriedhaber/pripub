@@ -1,5 +1,10 @@
 #include "xorcipher.h"
 
+// So insecure
+int xorcipher_genkey() {
+  srandom(1024);
+  return random();
+}
 
 int xorcipher_encrypt(char *x, size_t n, int key) {
   for  (int i = 0; i < n; i++) {
