@@ -19,11 +19,11 @@ XorCipherKey xorcipher_genkey(size_t n) {
 }
 
 int xorcipher_encrypt(char *x, size_t n, XorCipherKey* key) {
-  for (size_t i = 0; i < n; i++) { x[i] = x[i] ^ key->key[i % n];}
+  for (size_t i = 0; i < n; i++) { x[i] = x[i] ^ key->key[i % key->n];}
   return 1;
 }
 
 int xorcipher_decrypt(char *c, size_t n, XorCipherKey* key) {
-  for (size_t i = 0; i < n; i++) {c[i] = c[i] ^ key->key[i % n];}
+  for (size_t i = 0; i < n; i++) {c[i] = c[i] ^ key->key[i % key->n];}
   return 1;
 }
